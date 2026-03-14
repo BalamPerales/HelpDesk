@@ -25,11 +25,11 @@
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                            Usuario
-                        </a>
+                                <?php echo $_SESSION['nombres']; ?>
+                            </a>
                         <ul class="dropdown-menu dropdown-menu-end">
                             <li><a class="dropdown-item" href="#">Editar datos</a></li>
-                            <li><a class="dropdown-item" href="#">Salir</a></li>
+                            <li><a class="dropdown-item" href="../cerrar_sesion.php">Salir</a></li>
                         </ul>
                     </li>
                 </ul>
