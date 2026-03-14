@@ -22,15 +22,21 @@
                     <li class="nav-item"><a class="nav-link" href="asignacion.php">Asignación</a></li>
                     <li class="nav-item"><a class="nav-link" href="reportes.php">Reportes Generales</a></li>
                 </ul>
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                                <?php echo $_SESSION['nombres']; ?>
-                            </a>
-                        <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="#">Editar datos</a></li>
-                            <li><a class="dropdown-item" href="../cerrar_sesion.php">Salir</a></li>
-                        </ul>
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <span class="nav-link text-dark fw-bold me-3">
+                            Hola, <?php echo $_SESSION['nombres']; ?>
+                        </span>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Editar datos</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="btn btn-outline-danger btn-sm ms-2" href="../cerrarSesion.php">
+                            Salir
+                        </a>
                     </li>
                 </ul>
             </div>
