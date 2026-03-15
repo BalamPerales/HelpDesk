@@ -26,7 +26,7 @@
     $respuesta = mysqli_query($conexion, $sql);
 ?>
 
-<table class="table table-sm" id="tablaUsuariosDataTable">
+<table class="table table-sm dt-responsive nowrap" style="width:100%" id="tablaUsuariosDataTable">
     <thead>
         <th>Apellido Paterno</th>
         <th>Apellido Materno</th>
@@ -36,9 +36,10 @@
         <th>Telefono</th>
         <th>Correo</th>
         <th>Usuario</th>
+        <th>Ubicación</th>
         <th>Reset Password</th>
         <th>Cambiar Rol</th> 
-        <th>Ubicación</th>
+        <th>Estado</th>
         <th>Editar</th> 
         <th>Eliminar</th> 
     </thead>
@@ -55,6 +56,7 @@
             <td><?php echo $mostrar['telefono']; ?></td>
             <td><?php echo $mostrar['correo']; ?></td>
             <td><?php echo $mostrar['nombreUsuario']; ?></td>
+            <td><?php echo $mostrar['ubicacion']; ?></td>
             <td>
                 <button class="btn btn-success">
                     Cambiar Password
@@ -65,7 +67,23 @@
                     Cambiar Rol
                 </button>
             </td>
-            <td><?php echo $mostrar['ubicacion']; ?></td>
+            <td>
+                <?php 
+                    if($mostrar['estado']==1){ 
+                ?>
+                <button class="btn btn-info btn-sm">
+                    Activo
+                </button>
+                <?php 
+                    }else{ 
+                ?>
+                <button class="btn btn-info btn-sm">
+                    Inactivo
+                </button>
+                <?php
+                    };
+                ?>
+            </td>
             <td>
                 <button class="btn btn-warning">
                     Editar
@@ -85,6 +103,6 @@
 
 <script>
     $(document).ready(function(){
-        $('#tablaUsuariosDataTable').DataTable(); 
+        $('#tablaUsuariosDataTable').DataTable();  
     });
 </script>
