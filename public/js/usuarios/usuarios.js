@@ -53,7 +53,7 @@ function actualizarUsuario() {
       respuesta = respuesta.trim();
       if (respuesta == 1) {
         $("#tablaUsuariosLoad").load("usuarios/tablaUsuarios.php");
-        $("#frmAgregarUsuario")[0].reset();
+        $("#modalActualizarUsuarios").modal("hide");
         Swal.fire(":D", "Actualizado con exito!", "success");
       } else {
         Swal.fire(":(", "Error al actualizar!" + respuesta, "error");
