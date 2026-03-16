@@ -1,3 +1,7 @@
+$(document).ready(function () {
+  $("#tablaAsignacionesLoad").load("asignacion/tablaAsignacion.php");
+});
+
 function asignarEquipo() {
   $.ajax({
     type: "POST",
@@ -7,7 +11,8 @@ function asignarEquipo() {
       respuesta = respuesta.trim();
 
       if (respuesta == 1) {
-        $("#frmAsignaEquipo")[0].reset();
+        $("#frmAsignarEquipo")[0].reset();
+        $("#tablaAsignacionesLoad").load("asignacion/tablaAsignacion.php");
         Swal.fire(":D", "Asignado con exito!", "success");
       } else {
         Swal.fire(":(", "Fallo al asignar!" + respuesta, "error");
