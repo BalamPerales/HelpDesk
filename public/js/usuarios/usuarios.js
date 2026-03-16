@@ -43,3 +43,22 @@ function obtenerDatosUsuario(idUsuario) {
     },
   });
 }
+
+function actualizarUsuario() {
+  $.ajax({
+    type: "POST",
+    data: $("#frmActualizarUsuario").serialize(),
+    url: "../procesos/usuarios/login/crud/actualizarUsuario.php",
+    success: function (respuesta) {
+      respuesta = respuesta.trim();
+      if (respuesta == 1) {
+        $("#tablaUsuariosLoad").load("usuarios/tablaUsuarios.php");
+        $("#frmAgregarUsuario")[0].reset();
+        Swal.fire(":D", "Actualizado con exito!", "success");
+      } else {
+        Swal.fire(":(", "Error al actualizar!" + respuesta, "error");
+      }
+    },
+  });
+  return false;
+}
