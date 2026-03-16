@@ -10,6 +10,7 @@
             </button>
         </div>
         <div class="modal-body">
+            <input type="text" id="idUsuario" name="idUsuario" hidden>
             <div class="row">
                 <div class="col-sm-4">
                     <label for="paternou">Apellido paterno</label>
@@ -26,8 +27,8 @@
             </div>
             <div class="row">
                 <div class="col-sm-4">
-                    <label for="fecha_nacimientou">Fecha de nacimiento</label>
-                    <input type="date" class="form-control" id="fecha_nacimientou" name="fecha_nacimientou" required>
+                    <label for="fechaNacimientou">Fecha de nacimiento</label>
+                    <input type="date" class="form-control" id="fechaNacimientou" name="fechaNacimientou" required>
                 </div>
                 <div class="col-sm-4">
                     <label for="sexou">Sexo</label>
