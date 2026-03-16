@@ -15,11 +15,19 @@
                 <label for="idPersona">Nombre de Persona</label>
 
                 <?php
-                    $sql = "SELECT 
-                                id_persona,
-                                CONCAT(paterno, ' ', materno, ' ', nombre) AS nombre
-                            FROM
-                                t_persona ORDER BY paterno;";
+                    $sql = "SELECT DISTINCT
+                                persona.id_persona,
+                                CONCAT(persona.paterno,
+                                    ' ',
+                                    persona.materno,
+                                    ' ',
+                                    persona.nombre) AS nombre
+                            FROM 
+                                t_persona AS persona
+                                INNER JOIN 
+                                t_usuarios AS usuario ON persona.id_persona = usuario.id_persona
+                                AND usuario.id_rol = 3
+                            ORDER BY persona.paterno;";
                     $respuesta = mysqli_query($conexion, $sql);
                 ?>
                 <select name="idPersona" id="idPersona" class="form-control" required>
@@ -82,7 +90,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Asignar</button>
+        <button class="btn btn-primary">Asignar</button>
       </div>
     </div> 
   </div>
