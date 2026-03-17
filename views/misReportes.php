@@ -1,6 +1,9 @@
 <?php 
   include "header.php"; 
   if (isset($_SESSION['usuario']) && $_SESSION['usuario']['rol'] == 3) {
+    include "../clases/Conexion.php";
+    $con =new Conexion();
+    $conexion = $con->conectar();
 ?>
 
 <!-- Page Content -->
