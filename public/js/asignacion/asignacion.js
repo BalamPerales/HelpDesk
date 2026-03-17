@@ -39,7 +39,6 @@ function eliminarAsignacion(idAsignacion) {
         url: "../procesos/asignacion/eliminarAsignacion.php",
         success: function (respuesta) {
           if (respuesta == 1) {
-            $("#frmAsignarEquipo")[0].reset();
             $("#tablaAsignacionesLoad").load("asignacion/tablaAsignacion.php");
             Swal.fire(":D", "Eliminado con exito!", "success");
           } else {
