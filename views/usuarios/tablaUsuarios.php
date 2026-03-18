@@ -102,9 +102,35 @@
                 url: "../public/datatable/es_es.json"
             },
             dom: 'Bfrtip',
-            buttons: [
-                'copy', 'csv', 'excel', 'pdf'
-            ]
+            buttons : {
+                buttons : [
+                    {
+                        extend : 'copy',
+                        className : 'btn btn-outline-info',
+                        text : '<i class="fa-regular fa-copy"></i> Copiar'
+                    },
+                    {
+                        extend : 'csv',
+                        className : 'btn btn-outline-primary',
+                        text : '<i class="fa-solid fa-file-csv"></i> CSV'
+                    },
+                    {
+                        extend : 'excel',
+                        className : 'btn btn-outline-success',
+                        text : '<i class="fa-regular fa-file-excel"></i> Excel'
+                    },
+                    {
+                        extend : 'pdf',
+                        className : 'btn btn-outline-danger',
+                        text : '<i class="fa-regular fa-file-pdf"></i> PDF'
+                    }
+                ],
+                dom : {
+                    button : {
+                        className : 'btn'
+                    }
+                }
+            }
         });  
     });
 </script>
