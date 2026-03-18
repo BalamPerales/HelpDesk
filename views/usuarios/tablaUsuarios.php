@@ -100,7 +100,11 @@
         $('#tablaUsuariosDataTable').DataTable({
             language:{
                 url: "../public/datatable/es_es.json"
-            }
+            },
+            dom: 'Bfrtip',
+            buttons: [
+                'copy', 'csv', 'excel', 'pdf'
+            ]
         });  
     });
 </script>
