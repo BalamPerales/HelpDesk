@@ -58,7 +58,7 @@
             <td><?php echo $mostrar['sexo']; ?></td>
             <td>
                 <button class="btn btn-success">
-                    Cambiar Password
+                    <spans class="fas fa-exchange-alt"></spans>
                 </button>
             </td>
             <td>
@@ -66,13 +66,13 @@
                     if($mostrar['estado']==1){ 
                 ?>
                 <button class="btn btn-info btn-sm">
-                    Activo
+                    <span class="fa-solid fa-toggle-on"></span>
                 </button>
                 <?php 
                     }else{ 
                 ?>
-                <button class="btn btn-info btn-sm">
-                    Inactivo
+                <button class="btn btn-sm btn-danger">
+                    <span class="fa-solid fa-toggle-on"></span>
                 </button>
                 <?php
                     };
@@ -80,12 +80,12 @@
             </td>
             <td>
                 <button class="btn btn-warning" data-toggle="modal" data-target="#modalActualizarUsuarios" onclick="obtenerDatosUsuario(<?php echo $mostrar['idUsuario'] ?>)">
-                    Editar
+                    <span class="fa-solid fa-user-pen"></span>
                 </button>
             </td>
             <td>
                 <button class="btn btn-danger">
-                    Eliminar
+                    <span class="fa-solid fa-delete-left"></span>
                 </button>
             </td>
         </tr>

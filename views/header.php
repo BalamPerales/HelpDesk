@@ -18,7 +18,9 @@
       class="navbar navbar-expand-lg navbar-light bg-light static-top mb-5 shadow"
     >
       <div class="container">
-        <a class="navbar-brand" href="#">Help Desk</a>
+        <a class="navbar-brand" href="inicio.php">
+          <img src="../public/img/logoicono.ico" alt="Icono" width="30%">
+        </a>
         <button
           class="navbar-toggler"
           type="button"
@@ -33,37 +35,52 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="inicio.php">Inicio</a>
+              <a class="nav-link" href="inicio.php">
+                <span class="fas fa-home"></span> Inicio
+              </a>
             </li>
             <?php if ($_SESSION['usuario']['rol'] == 3) { ?>
             <li class="nav-item">
-              <a class="nav-link" href="misDispositivos.php">Mis dispositivos</a>
+              <a class="nav-link" href="misDispositivos.php">
+                <span class="fas fa-server"></span> Mis dispositivos
+              </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="misReportes.php">Reportes soporte</a>
+              <a class="nav-link" href="misReportes.php">
+                <spans class="fas fa-file-alt"></spans> Reportes soporte
+              </a>
             </li>
             <?php } else if($_SESSION['usuario']['rol'] == 1){  ?>
 
             <!-- Las vistas del administrador -->
             <li class="nav-item">
-              <a class="nav-link" href="usuarios.php">Usuarios</a>
+              <a class="nav-link" href="usuarios.php">
+                <span class="fas fa-user-cog"></span> Usuarios
+              </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="asignacion.php">Asignación</a>
+              <a class="nav-link" href="asignacion.php">
+                <span class="fas fa-address-book"></span> Asignación
+              </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="reportes.php">Reportes</a>
+              <a class="nav-link" href="reportes.php">
+                <spans class="fas fa-file-alt"></spans> Reportes
+              </a>
             </li>
             <?php } ?>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle"  style="color:blue" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Usuario: <?php echo $_SESSION['usuario']['nombre']; ?>
+                <span class="far fa-user"></span> Usuario: <?php echo $_SESSION['usuario']['nombre']; ?>
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modalActualizarDatosPersonales" onclick="obtenerDatosPersonalesInicio('<?php echo $_SESSION['usuario']['id'];?>')">Editar datos</a>
-
+                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modalActualizarDatosPersonales" onclick="obtenerDatosPersonalesInicio('<?php echo $_SESSION['usuario']['id'];?>')">
+                  <span class="far fa-edit"></span> Editar datos
+                </a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item"  style="color:red" href="../procesos/usuarios/login/salir.php">Salir</a>
+                <a class="dropdown-item"  style="color:red" href="../procesos/usuarios/login/salir.php">
+                  <span class="fas fa-sign-out-alt"></span> Salir
+                </a>
               </div>
             </li>
           </ul>
