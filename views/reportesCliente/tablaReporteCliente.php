@@ -56,7 +56,7 @@
                     echo $cadenaEstatus;
                 ?>
             </td>
-            <td><?php echo $mostrar['solucion_problema'];?></td>
+            <td><?php echo $mostrar['solucion'];?></td>
             <td>
                 <?php
                     if ($mostrar['solucion'] == "") {
