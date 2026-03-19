@@ -85,8 +85,9 @@
                 </button>
             </td>
             <td>
-                <button class="btn btn-danger">
-                    <span class="fa-solid fa-delete-left"></span>
+                <button class="btn btn-danger btn-sm" 
+                onclick="eliminarUsuario(<?php echo $mostrar['idUsuario']; ?>,<?php echo $mostrar['idPersona']; ?> )">
+                    <span class="fas fa-user-times"></span>
                 </button>
             </td>
         </tr>
