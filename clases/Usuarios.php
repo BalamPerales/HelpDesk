@@ -72,52 +72,51 @@
             return $idPersona;
         }
         public function obtenerDatosUsuario($idUsuario){
-            $conexion = Conexion::conectar();
+        $conexion = Conexion::conectar();
 
-            $sql = "SELECT 
-                        usuarios.id_usuario AS idUsuario,
-                        usuarios.usuario AS nombreUsuario,
-                        roles.nombre AS rol,
-                        usuarios.id_rol AS idRol,
-                        usuarios.ubicacion AS ubicacion,
-                        usuarios.activo AS estado,
-                        usuarios.id_persona AS idPersona,
-                        persona.nombre AS nombrePersona,
-                        persona.paterno AS paterno,
-                        persona.materno AS materno,
-                        persona.fecha_nacimiento AS fechaNacimiento,
-                        persona.sexo AS sexo,
-                        persona.correo AS correo,
-                        persona.telefono AS telefono
-                    FROM
-                        t_usuarios AS usuarios
-                            INNER JOIN
-                        t_roles AS roles ON usuarios.id_rol = roles.id_rol
-                            INNER JOIN
-                        t_persona AS persona ON usuarios.id_persona = persona.id_persona 
-                            WHERE usuarios.id_usuario = '$idUsuario'";
-            $respuesta = mysqli_query($conexion,$sql);
-            $usuario =mysqli_fetch_array($respuesta);
+        $sql = "SELECT 
+                    usuarios.id_usuario AS idUsuario,
+                    usuarios.usuario AS nombreUsuario,
+                    roles.nombre AS rol,
+                    usuarios.id_rol AS idRol,
+                    usuarios.ubicacion AS ubicacion,
+                    usuarios.activo AS estado,
+                    usuarios.id_persona AS idPersona,
+                    persona.nombre AS nombrePersona,
+                    persona.paterno AS paterno,
+                    persona.materno AS materno,
+                    persona.fecha_nacimiento AS fechaNacimiento,
+                    persona.sexo AS sexo,
+                    persona.correo AS correo,
+                    persona.telefono AS telefono
+                FROM 
+                    t_usuarios AS usuarios
+                    INNER JOIN t_roles AS roles ON usuarios.id_rol = roles.id_rol
+                    INNER JOIN t_persona AS persona ON usuarios.id_persona = persona.id_persona
+                WHERE usuarios.id_usuario = '$idUsuario'";
 
-            $datos = array(
-                        'idUsuario' => $usuario['idUsuario'],
-                        'nombreUsuario' => $usuario['nombreUsuario'],
-                        'rol' => $usuario['rol'],
-                        'idRol' => $usuario['idRol'],
-                        'ubicacion' => $usuario['ubicacion'],
-                        'estado' => $usuario['estado'],
-                        'idPersona' => $usuario['idPersona'],
-                        'nombrePersona' => $usuario['nombrePersona'],
-                        'paterno' => $usuario['paterno'],
-                        'materno' => $usuario['materno'],
-                        'fechaNacimiento' => $usuario['fechaNacimiento'],
-                        'sexo' => $usuario['sexo'],
-                        'correo' => $usuario['correo'],
-                        'telefono' => $usuario['telefono']
-            );
+        $respuesta = mysqli_query($conexion, $sql);
+        $usuario = mysqli_fetch_array($respuesta);
 
-            return $datos;
-        }
+        $datos = array(
+            'idUsuario' => $usuario['idUsuario'],
+            'nombreUsuario' => $usuario['nombreUsuario'],
+            'rol' => $usuario['rol'],
+            'idRol' => $usuario['idRol'],
+            'ubicacion' => $usuario['ubicacion'],
+            'estado' => $usuario['estado'],
+            'idPersona' => $usuario['idPersona'],
+            'nombrePersona' => $usuario['nombrePersona'],
+            'paterno' => $usuario['paterno'],
+            'materno' => $usuario['materno'],
+            'fechaNacimiento' => $usuario['fechaNacimiento'],
+            'sexo' => $usuario['sexo'],
+            'correo' => $usuario['correo'],
+            'telefono' => $usuario['telefono']
+        );
+
+        return $datos;
+    }
 
         public function actualizarUsuario($datos){
             $conexion = Conexion::conectar();

@@ -81,7 +81,7 @@
               <span class="fas fa-user"></span> Usuario: <?php echo $_SESSION['usuario']['nombre']; ?>
             </a>
             <div class="dropdown-menu dropdown-menu-right shadow-lg" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modalActualizarDatosPersonales" onclick="obtenerDatosPersonalesInicio('<?php echo $_SESSION['usuario']['id_usuario']; ?>')">
+              <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modalActualizarDatosPersonales" onclick="obtenerDatosPersonalesInicio('<?php echo $_SESSION['usuario']['id']; ?>')">
                 <span class="fas fa-edit"></span> Editar datos
               </a>
               <div class="dropdown-divider"></div>
