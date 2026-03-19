@@ -58,28 +58,24 @@
             <td><?php echo $mostrar['sexo']; ?></td>
             <td>
                 <button class="btn btn-success" 
-                        data-toggle="modal" 
-                        data-target="#modalResetPassword"
-                        onclick="agregarIdUsuarioReset('<?php echo $mostrar['idUsuario']; ?>')">
-                    <span class="fas fa-exchange-alt"></span>
-                </button>
+                    data-toggle="modal" 
+                    data-target="#modalResetPassword"
+                    onclick="agregarIdUsuarioReset('<?php echo $mostrar['idUsuario']; ?>')">
+                <span class="fas fa-exchange-alt"></span>
+            </button>
             </td>
             <td>
-                <?php 
-                    if($mostrar['estado']==1){ 
-                ?>
-                <button class="btn btn-info btn-sm">
-                    <span class="fa-solid fa-toggle-on"></span>
+                <?php if ($mostrar['estado'] == 1) { ?>
+                <button class="btn btn-secondary btn-sm"
+                    onclick="cambioEstatusUsuario(<?php echo $mostrar['idUsuario']; ?>, <?php echo $mostrar['estado']; ?>)">
+                    <span class="fas fa-power-off"></span> Off
                 </button>
-                <?php 
-                    }else{ 
-                ?>
-                <button class="btn btn-sm btn-danger">
-                    <span class="fa-solid fa-toggle-on"></span>
+            <?php } else { ?>
+                <button class="btn btn-success btn-sm"
+                    onclick="cambioEstatusUsuario(<?php echo $mostrar['idUsuario']; ?>, <?php echo $mostrar['estado']; ?>)">
+                    <span class="fas fa-power-off"></span> On
                 </button>
-                <?php
-                    };
-                ?>
+            <?php } ?>
             </td>
             <td>
                 <button class="btn btn-warning" data-toggle="modal" 
