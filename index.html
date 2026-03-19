@@ -3,26 +3,44 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="public/bootstrap/bootstrap.min.css" />
-    <link rel="stylesheet" href="public/css/menu.css" />
-    <title>Help Desk</title>
-  </head>
-  <body>
-    <div class="wrapper fadeInDown">
-      <div id="formContent">
-        <!-- Tabs Titles -->
 
-        <!-- Icon -->
-        <div class="fadeIn first">
+    <link rel="stylesheet" href="public/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="public/css/login.css" />
+    <link rel="stylesheet" href="public/css/menu.css" />
+
+    <link rel="stylesheet" href="public/css/triforce_logo.css" />
+    <link rel="stylesheet" href="public/css/zelda_style.css" />
+
+    <style>
+      html,
+      body {
+        background-color: transparent !important;
+      }
+    </style>
+
+    <title>Help Desk</title>
+    <link rel="icon" href="public/img/logoicono.ico" type="image/x-icon" />
+  </head>
+  <body class="login-page">
+    <div class="wrapper fadeInDown">
+      <div id="formContent" class="zelda-card">
+        <div class="fadeIn first mt-4 mb-3">
           <img
-            src="https://www.b-cube.in/wp-content/uploads/2014/05/aditya-300x177.jpg"
-            id="icon"
-            alt="User Icon"
+            src="public/img/logoicono.ico"
+            alt="Logo Help Desk"
+            style="width: 80px; height: auto"
           />
-          <h1>Help Desk</h1>
+          <h1
+            style="
+              color: var(--zelda-gold);
+              font-weight: bold;
+              margin-top: 15px;
+            "
+          >
+            Help Desk
+          </h1>
         </div>
 
-        <!-- Login Form -->
         <form id="frmLogin" method="Post" onsubmit="return loginUsuario();">
           <input
             type="text"
@@ -40,23 +58,39 @@
             placeholder="password"
             required
           />
-          <input type="submit" class="fadeIn fourth" value="Entrar" />
+          <input
+            type="submit"
+            class="fadeIn fourth"
+            value="Entrar"
+            style="
+              background-color: var(--zelda-green-light);
+              border: none;
+              color: white;
+              font-weight: bold;
+            "
+          />
         </form>
 
-        <!-- Remind Passowrd -->
-        <div id="formFooter">
+        <div
+          id="formFooter"
+          style="
+            background-color: rgba(255, 255, 255, 0.5);
+            border-top: 1px solid var(--zelda-gold);
+          "
+        >
           <a
             class="underlineHover"
-            href=""
+            href="#"
             data-toggle="modal"
             data-target="#modalContacto"
-            >Contactar con el administrador</a
+            style="color: var(--zelda-green-dark); font-weight: bold"
           >
+            Contactar con el administrador
+          </a>
         </div>
       </div>
-
-      <!-- Modal -->
     </div>
+
     <div
       class="modal fade"
       id="modalContacto"

@@ -1,0 +1,50 @@
+:root {
+  --zelda-gold: #ffd700;
+  --zelda-green-dark: #1e3a1e;
+  --zelda-green-light: #4a8a4a;
+  --bg-login: url("../img/fondoLogin.jpg");
+  --bg-dashboard: url("../img/fondoDashboard.jpg");
+  --nav-bg: #0a1e0a;
+  --card-bg: rgba(255, 255, 255, 0.92);
+}
+
+body.login-page {
+  background-image: var(--bg-login);
+  background-size: cover;
+  background-position: center bottom;
+  background-attachment: fixed;
+  font-family: "Courier New", Courier, monospace;
+}
+
+body.dashboard-page {
+  background-image: var(--bg-dashboard);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* Tarjetas transparentes estilo Zelda */
+.zelda-card {
+  background-color: var(--card-bg) !important;
+  border: 2px solid var(--zelda-gold) !important;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Navbar oscura con toques dorados */
+.bg-zelda-dark {
+  background-color: var(--nav-bg) !important;
+  border-bottom: 2px solid var(--zelda-gold);
+}
+.navbar-dark .navbar-nav .nav-link {
+  color: var(--zelda-gold) !important;
+  font-weight: bold;
+}
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: var(--zelda-green-light) !important;
+}
+.navbar-brand {
+  color: var(--zelda-gold) !important;
+  font-weight: bold;
+  text-transform: uppercase;
+}
