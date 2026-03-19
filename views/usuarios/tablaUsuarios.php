@@ -57,8 +57,11 @@
             <td><?php echo $mostrar['ubicacion']; ?></td>
             <td><?php echo $mostrar['sexo']; ?></td>
             <td>
-                <button class="btn btn-success">
-                    <spans class="fas fa-exchange-alt"></spans>
+                <button class="btn btn-success" 
+                        data-toggle="modal" 
+                        data-target="#modalResetPassword"
+                        onclick="agregarIdUsuarioReset('<?php echo $mostrar['idUsuario']; ?>')">
+                    <span class="fas fa-exchange-alt"></span>
                 </button>
             </td>
             <td>
@@ -79,7 +82,9 @@
                 ?>
             </td>
             <td>
-                <button class="btn btn-warning" data-toggle="modal" data-target="#modalActualizarUsuarios" onclick="obtenerDatosUsuario(<?php echo $mostrar['idUsuario'] ?>)">
+                <button class="btn btn-warning" data-toggle="modal" 
+                data-target="#modalActualizarUsuarios" 
+                onclick="obtenerDatosUsuario(<?php echo $mostrar['idUsuario'] ?>)">
                     <span class="fa-solid fa-user-pen"></span>
                 </button>
             </td>
