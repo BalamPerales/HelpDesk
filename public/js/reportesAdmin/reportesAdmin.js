@@ -16,11 +16,11 @@ function eliminarReporteAdmin(idReporte) {
       $.ajax({
         type: "POST",
         data: "idReporte=" + idReporte,
-        url: "../procesos/reportesCliente/eliminarReporteCliente.php",
+        url: "../procesos/reportesAdmin/eliminarReporteAdmin.php",
         success: function (respuesta) {
           if (respuesta == 1) {
-            $("#tablaReporteClienteLoad").load(
-              "reportesCliente/tablaReporteCliente.php",
+            $("#tablaReporteAdminLoad").load(
+              "reportesAdmin/tablaReporteAdmin.php",
             );
             Swal.fire(":D", "Eliminado con exito!", "success");
           } else {
